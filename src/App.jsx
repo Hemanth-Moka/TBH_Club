@@ -5,21 +5,24 @@ import Hero from './Sections/Hero';
 import Footer from './components/Footer';
 import GridDistortion from './Sections/GridDistortion';
 import Aboutus from './Pages/Aboutus';
+import Team from './Pages/Team';
+import JoinUs from './Pages/Jion_us';
+import Login from './Pages/Login';
+import SplashCursor  from './components/SplashCursor';
 // Ensure this is the correct import path for your Aboutus component
-const items = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "/Aboutus" },
-  { label: "Contact", href: "/contact" },
-];
 function App() {
   return (
     <Router>
       <Navbar />
+<SplashCursor/>
 
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/Aboutus" element={<Aboutus />} />
+        {/* <Route path="/team" element={<Team />} /> */}
         {/* Add more routes here if needed */}
+        <Route path="/join_us" element={<JoinUs />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
