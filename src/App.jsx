@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './Sections/Hero';
 import Footer from './components/Footer';
-import GridDistortion from './Sections/GridDistortion';
+// import GridDistortion from './Sections/GridDistortion';
 import Aboutus from './Pages/Aboutus';
 import Team from './Pages/Team';
-import JoinUs from './Pages/Jion_us';
+import JoinUs from './Pages/Join_us';
 import Login from './Pages/Login';
 import SplashCursor  from './components/SplashCursor';
 // Ensure this is the correct import path for your Aboutus component

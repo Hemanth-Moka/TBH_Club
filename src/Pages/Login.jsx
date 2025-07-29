@@ -6,7 +6,7 @@ export default function Login() {
         {/* Login Form */}
         <form className="w-full max-w-md p-10 shadow-lg">
           <div className="mb-8 text-center">
-            <h1 className="mr-5 mt-10 text-3xl font-bold text-violet-500">Welcome Back</h1>
+            <h1 className="mr-5ion  mt-10 text-3xl font-bold text-violet-500">Welcome Back</h1>
             <p className="mt-3 text-gray-400 text-sm">Login to your account Only For Admins</p>
           </div>
 
