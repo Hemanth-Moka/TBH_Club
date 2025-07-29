@@ -89,18 +89,18 @@ export default function Navbar() {
           <div className="navbar__mobile-nav">
             {isLoggedIn ? (
               <>
-                <Link to="/users" onClick={() => setMenuOpen(false)}>Users</Link>
-                <button onClick={() => { setMenuOpen(false); handleLogout(); }}>Logout</button>
+                <Link to="/users" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Users</Link>
+                <button className="navbar__mobile-nav-link" onClick={() => { setMenuOpen(false); handleLogout(); }}>Logout</button>
               </>
             ) : (
               <>
-                <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link to="/Aboutus" onClick={() => setMenuOpen(false)}>About</Link>
-                <Link to="/Team" onClick={() => setMenuOpen(false)}>Team</Link>
-                <Link to="/events" onClick={() => setMenuOpen(false)}>Events</Link>
-                <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-                <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
-                <Link to="/join_us" onClick={() => setMenuOpen(false)}>Join Us</Link>
+                <Link to="/" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link to="/Aboutus" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>About</Link>
+                <Link to="/Team" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Team</Link>
+                <Link to="/events" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Events</Link>
+                <Link to="/contact" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Contact</Link>
+                <Link to="/join_us" className="navbar__mobile-cta" onClick={() => setMenuOpen(false)}>Join Us</Link>
+                <Link to="/login" className="navbar__mobile-cta" onClick={() => setMenuOpen(false)}>Login</Link>
               </>
             )}
           </div>
