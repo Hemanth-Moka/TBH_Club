@@ -1,90 +1,263 @@
-/* Navbar.css */
+/* ---------------------- */
+/*        NAVBAR         */
+/* ---------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Sora:wght@500;700;800&display=swap');
 
-.navbar-container {
+.navbar {
   position: fixed;
-  top: 1.5rem; /* top-6 */
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
   width: 90%;
-  max-width: 64rem; /* same as max-w-4xl */
-  padding: 0.75rem 1.5rem; /* px-6 py-3 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  color: white;
+  z-index: 999;
+  transition: all 0.4s ease;
+  margin-top: 18px;
+  border-radius: 35px;
+  padding: 0.2px 10px;
+  background: rgba(114, 27, 255, 0);
+  backdrop-filter: blur(80px) saturate(160%);
+  -webkit-backdrop-filter: blur(2130px) saturate(160%);
+  /* border: 1px solid rgba(165, 82, 88, 0.2); */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-title {
-  font-size: 1.25rem; /* text-xl */
+.navbar--scrolled {
+  background-color: rgba(67, 55, 56, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* .navbar--visible {
+  transform: translateX(-10%) translateY(50%);
+}
+
+.navbar--hidden {
+  transform: translateX(-50%) translateY(-100%);
+} */
+
+/* ---------------------- */
+/*     CONTAINER          */
+/* ---------------------- */
+
+.navbar__container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+}
+
+/* ---------------------- */
+/*         LOGO           */
+/* ---------------------- */
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar__logo-image {
+  height: 3.75rem;
+  object-fit: contain;
+  margin-top: 5px;
+}
+
+.navbar__logo-text {
+  color: #f8eaea;
+  font-weight: 700;
+  font-size: 2.25rem;
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.navbar__logo-digi {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.navbar__logo-shakti {
+  color: #6000c7d4;
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.5px;
+  margin-left: 0.25rem;
+}
+
+.navbar__logo-subtext {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #cbb4b4;
+  margin-top: -0.1rem;
+  letter-spacing: 0.4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .navbar__logo-image {
+    height: 2.2rem;
+  }
+
+  .navbar__logo-digi,
+  .navbar__logo-shakti {
+    font-size: 1.25rem;
+  }
+
+  .navbar__logo-subtext {
+    font-size: 0.65rem;
+  }
+}
+
+/* ---------------------- */
+/*     DESKTOP NAV        */
+/* ---------------------- */
+
+.navbar__nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.navbar__nav-link {
+  color: #e3dada;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar__nav-link:hover,
+.navbar__nav-link--active {
+  color: #9900ff;
   font-weight: 600;
 }
 
-.navbar-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navbar-link {
-  transition: color 0.3s ease;
+.navbar__cta {
+  background: linear-gradient(135deg, #b222ff, #ffffff);
   color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  margin-top: 9px;
+  font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.navbar-link:hover {
-  color: #e5e5e5;
+.navbar__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(190, 13, 255, 0.675);
 }
 
-.navbar-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
+/* ---------------------- */
+/*     MOBILE TOGGLE      */
+/* ---------------------- */
+
+.navbar__mobile-toggle {
+  display: block;
+  padding: 0.5rem;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 0.5rem;
+  color: white;
+  background: transparent;
   border: none;
-  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.mobile-menu {
-  position: absolute;
-  top: 100%;
-  margin-top: 0.5rem;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.navbar__mobile-toggle-icon {
+  width: 2rem;
+  height: 2rem;
+  stroke: currentColor;
+  fill: none;
 }
 
-.mobile-link {
-  padding: 0.5rem 0;
-  width: 100%;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-}
-
-.mobile-link:hover {
-  color: #e5e5e5;
-}
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .navbar-links {
+@media (min-width: 1024px) {
+  .navbar__mobile-toggle {
     display: none;
   }
+}
 
-  .navbar-toggle {
-    display: block;
-  }
+/* ---------------------- */
+/*      MOBILE MENU       */
+/* ---------------------- */
+
+.navbar__mobile-menu {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.navbar__mobile-menu--open {
+  max-height: 100vh;
+  opacity: 1;
+  padding: 1rem;
+}
+
+.navbar__mobile-menu--closed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.navbar__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.navbar__mobile-nav-link {
+  color: #e3dada;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.navbar__mobile-nav-link:hover,
+.navbar__mobile-nav-link--active {
+  color: hsl(277, 100%, 65%);
+  font-weight: 600;
+}
+
+.navbar__mobile-cta {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-decoration: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar__mobile-cta:hover {
+  background: linear-gradient(135deg, #652e32, #914346);
 }

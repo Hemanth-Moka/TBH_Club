@@ -44,7 +44,8 @@ export default function Hero() {
 
       {/* Informational Sections */}
 <ClubInfo />
-<WhatWedo /><Stats />
+<WhatWedo />
+{/* <Stats /> */}
 <ClubJoin />
 
     </>

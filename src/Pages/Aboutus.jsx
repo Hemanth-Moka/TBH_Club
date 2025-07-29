@@ -2,6 +2,19 @@ import React from 'react'
 
 export default function Aboutus() {
   return (
-    <div>Aboutus</div>
+    <div>
+      bcdibcsdon
+      cdsbvf
+      f
+      f
+
+      df
+      gdfgfdgdgdg
+      dg
+      <data value="gdfg
+      g
+      dg
+      dgddgdfgdfgd"></data>
+    </div>
   )
 }

@@ -4,14 +4,21 @@ import Navbar from './components/Navbar';
 import Hero from './Sections/Hero';
 import Footer from './components/Footer';
 import GridDistortion from './Sections/GridDistortion';
-
+import Aboutus from './Pages/Aboutus';
+// Ensure this is the correct import path for your Aboutus component
+const items = [
+  { label: "Home", href: "#" },
+  { label: "About", href: "/Aboutus" },
+  { label: "Contact", href: "/contact" },
+];
 function App() {
   return (
     <Router>
       <Navbar />
-      
+
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route path="/Aboutus" element={<Aboutus />} />
         {/* Add more routes here if needed */}
       </Routes>
       <Footer />
