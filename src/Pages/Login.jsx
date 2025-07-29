@@ -5,10 +5,13 @@ import axios from 'axios';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState(null); // success or error message
+  const [messageType, setMessageType] = useState(''); // 'success' | 'error'
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage(null); // reset message
 
     try {
       const res = await axios.post('https://backend-tbh.onrender.com/login', {
@@ -16,15 +19,17 @@ export default function Login() {
         password,
       });
 
-      alert(res.data.message);
+      setMessage(res.data.message);
+      setMessageType('success');
 
-      // Save login state in localStorage
       localStorage.setItem('adminLoggedIn', 'true');
 
-      // Redirect to homepage
-      navigate('/');
+      setTimeout(() => {
+        navigate('/');
+      }, 1500); // delay for animation
     } catch (err) {
-      alert(err.response?.data?.message || 'Login failed');
+      setMessage(err.response?.data?.message || 'Login failed');
+      setMessageType('error');
     }
   };
 
@@ -33,11 +38,24 @@ export default function Login() {
       <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-5xl">
 
         {/* Login Form */}
-        <form onSubmit={handleSubmit} className="w-full max-w-md p-10 shadow-lg">
+        <form onSubmit={handleSubmit} className="w-full max-w-md p-10 shadow-lg relative">
           <div className="mb-8 text-center">
-            <h1 className="mr-5ion  mt-10 text-3xl font-bold text-violet-500">Welcome Back</h1>
+            <h1 className="mt-10 text-3xl font-bold text-violet-500">Welcome Back</h1>
             <p className="mt-3 text-gray-400 text-sm">Login to your account Only For Admins</p>
           </div>
+
+          {/* Animated Login Message */}
+          {message && (
+            <div
+              className={`mb-6 px-4 py-3 rounded-lg animate-fade-in-down transition-all text-sm font-medium ${
+                messageType === 'success'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-red-600 text-white'
+              }`}
+            >
+              {message}
+            </div>
+          )}
 
           {/* Email */}
           <div className="mb-6">
@@ -45,7 +63,7 @@ export default function Login() {
             <input
               id="email"
               type="email"
-              placeholder="Enter User Name"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -95,8 +113,26 @@ export default function Login() {
             className="w-80 h-auto opacity-90 hover:scale-105 transition-transform duration-500"
           />
         </div>
-
       </div>
+
+      {/* Tailwind Animation */}
+      <style>
+        {`
+          @keyframes fade-in-down {
+            0% {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fade-in-down {
+            animation: fade-in-down 0.5s ease-out;
+          }
+        `}
+      </style>
     </div>
   );
 }

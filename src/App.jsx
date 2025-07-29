@@ -1,32 +1,46 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './Sections/Hero';
 import Footer from './components/Footer';
-// import GridDistortion from './Sections/GridDistortion';
 import Aboutus from './Pages/Aboutus';
 import Team from './Pages/Team';
 import JoinUs from './Pages/Join_us';
 import Login from './Pages/Login';
-import SplashCursor  from './components/SplashCursor';
-import Users from './admin/Users'
+import SplashCursor from './components/SplashCursor';
+import Users from './admin/Users';
+import Notfound from './Pages/Notfound';
 
-// Ensure this is the correct import path for your Aboutus component
+// PrivateRoute wrapper
+const PrivateRoute = ({ children }) => {
+  const isLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+  return isLoggedIn ? children : <Navigate to="/login" replace />;
+};
+
 function App() {
   return (
     <Router>
       <Navbar />
-<SplashCursor/>
+      <SplashCursor />
 
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/Aboutus" element={<Aboutus />} />
-        {/* <Route path="/team" element={<Team />} /> */}
-        {/* Add more routes here if needed */}
         <Route path="/join_us" element={<JoinUs />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/users" element={<Users />} />
+        <Route path="*" element={<Notfound />} />
+
+        {/* Protected Route */}
+        <Route
+          path="/users"
+          element={
+            <PrivateRoute>
+              <Users />
+            </PrivateRoute>
+          }
+        />
       </Routes>
+
       <Footer />
     </Router>
   );
