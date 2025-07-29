@@ -9,6 +9,8 @@ import Team from './Pages/Team';
 import JoinUs from './Pages/Join_us';
 import Login from './Pages/Login';
 import SplashCursor  from './components/SplashCursor';
+import Users from './admin/Users'
+
 // Ensure this is the correct import path for your Aboutus component
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         {/* Add more routes here if needed */}
         <Route path="/join_us" element={<JoinUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
       <Footer />
     </Router>
