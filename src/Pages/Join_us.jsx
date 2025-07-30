@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
+import { PhotoIcon } from '@heroicons/react/24/solid';
 
 export default function JoinUs() {
   const navigate = useNavigate();
@@ -22,6 +22,8 @@ export default function JoinUs() {
   const [profilePhotoName, setProfilePhotoName] = useState('');
   const [coverPhotoName, setCoverPhotoName] = useState('');
 
+  const [status, setStatus] = useState({ type: '', message: '' });
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -39,17 +41,29 @@ export default function JoinUs() {
 
     try {
       await axios.post('https://backend-tbh.onrender.com/join', data);
-      alert('🎉 Registration successful!');
-      navigate('/');
-    } catch (err) {
-      console.error(err);
-      alert('❌ Failed to submit form.');
+      setStatus({ type: 'success', message: '🎉 Registration successful!' });
+      setTimeout(() => navigate('/'), 1500); // Navigate after short delay
+    } catch {
+      setStatus({ type: 'error', message: '❌ Failed to submit form. Please try again.' });
     }
   };
 
   return (
     <form className="bg-black text-white min-h-screen px-4 py-16" onSubmit={handleSubmit}>
       <div className="max-w-5xl mx-auto space-y-16">
+        {/* Status Message */}
+        {status.message && (
+          <div
+            className={`text-center px-6 py-3 rounded-lg font-semibold ${
+              status.type === 'success'
+                ? 'bg-green-700 text-green-100'
+                : 'bg-red-700 text-red-100'
+            }`}
+          >
+            {status.message}
+          </div>
+        )}
+
         {/* Header */}
         <div className="text-center">
           <h1 className="mt-20 text-4xl font-bold text-violet-500">Join The Blockchain Hub</h1>
@@ -66,21 +80,6 @@ export default function JoinUs() {
             <InputField id="about" label="About You" placeholder="A brief intro..." onChange={handleChange} value={form.about} />
           </div>
 
-          {/* <div className="flex items-center gap-4 mt-4">
-            <UserCircleIcon className="w-12 h-12 text-gray-600" />
-            <label className="px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 transition text-white shadow-sm cursor-pointer">
-              Upload Profile Photo
-              <input
-                type="file"
-                className="hidden"
-                accept="image/*"
-                onChange={(e) => {
-                  setProfilePhoto(e.target.files[0]);
-                  setProfilePhotoName(e.target.files[0]?.name || '');
-                }}
-              />
-            </label>
-          </div> */}
           {profilePhotoName && (
             <p className="text-sm text-green-400 mt-1">📁 Uploaded: {profilePhotoName}</p>
           )}
@@ -123,17 +122,30 @@ export default function JoinUs() {
         </section>
 
         {/* Blockchain Journey */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-violet-400">Your Blockchain Journey</h2>
-          <div>
-            <label htmlFor="interestArea" className="text-sm font-medium">Interest Area</label>
-            <select
-              id="interestArea"
-              name="interestArea"
-              value={form.interestArea}
-              onChange={handleChange}
-              className="mt-1 w-full rounded-xl bg-black/30 border border-violet-500/20 p-3 text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
-            >
+     <section className="space-y-6">
+  <h2 className="text-2xl font-semibold text-violet-400">Your Blockchain Journey</h2>
+  
+  <div>
+    <div className="flex items-center justify-between">
+      <label htmlFor="interestArea" className="text-sm font-medium text-white">
+        Interest Area
+      </label>
+      <a
+        href="/AboutUs"
+        className="text-xs text-violet-400 hover:underline"
+      >
+        Know more about domains
+      </a>
+    </div>
+
+    <select
+      id="interestArea"
+      name="interestArea"
+      required
+      value={form.interestArea}
+      onChange={handleChange}
+      className="mt-1 w-full rounded-xl bg-black/30 border border-violet-500/20 p-3 text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+    >
               <option value="">Choose an area</option>
               <option>Blockchain Development</option>
               <option>NFT & WEB 3</option>
@@ -141,7 +153,6 @@ export default function JoinUs() {
               <option>Designing / Video Editing</option>
               <option>Research & Innovation</option>
               <option>PR And Marketing</option>
-              {/* <option></option> */}
             </select>
           </div>
 
@@ -185,6 +196,7 @@ function InputField({ id, label, type = 'text', placeholder = '', value, onChang
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
         className="mt-1 w-full rounded-xl bg-black/30 border border-violet-500/20 backdrop-blur-sm p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
       />
     </div>
@@ -205,6 +217,7 @@ function TextareaField({ id, label, placeholder = '', value, onChange }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
         className="mt-1 w-full rounded-xl bg-black/30 border border-violet-500/20 backdrop-blur-sm p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
       />
     </div>

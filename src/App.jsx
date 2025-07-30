@@ -9,18 +9,22 @@ import JoinUs from './Pages/Join_us';
 import Login from './Pages/Login';
 import SplashCursor from './components/SplashCursor';
 import Users from './admin/Users';
-// import Team from './Pages/Team'
+import ContactUs from './Pages/ContactUs';
+import Events from './Pages/Events';
 import Notfound from './Pages/Notfound';
+import CardSpotlightTest from './Pages/CardSpotlightTest';
+import { GlobalLoader } from './components/ui/global-loader';
 
 // PrivateRoute wrapper
 const PrivateRoute = ({ children }) => {
   const isLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
-  return isLoggedIn ? children : <Navigate to="/login" replace />;
+  return isLoggedIn ? children : <Navigate to="/Login" replace />;
 };
 
 function App() {
   return (
     <Router>
+      <GlobalLoader delay={1000} />
       <Navbar />
       <SplashCursor />
 
@@ -28,8 +32,12 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/join_us" element={<JoinUs />} />
+        <Route path="/Events" element={<Events />} />
+        
+        <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/team" element={<Team />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/card-spotlight-test" element={<CardSpotlightTest />} />
         <Route path="*" element={<Notfound />} />
 
         {/* Protected Route */}

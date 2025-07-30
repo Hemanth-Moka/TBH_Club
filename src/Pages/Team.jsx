@@ -22,7 +22,7 @@ const Team = () => {
     {
       src: "/Team/Hemanth_Moka1.jpg",
       name: "Hemanth Moka",
-      role: "Full - Stack Developer"
+      role: "</>Web Developer"
     },
         {
       src: "/Team/Sarvagna.jpg",
@@ -48,9 +48,10 @@ const Team = () => {
     <section className="mt-0 py-20 bg-gradient-to-br from-[#000000] via-[#1a1a1a] to-[#000000] text-white">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="mt-20 text-2xl font-bold text-violet-300 sm:text-4xl xl:text-5xl font-poppins">
-            Team Behind the Blockchain HUB 
-          </h2>
+          <h2 className="mt-20 mb-19 text-2xl font-bold text-violet-300 sm:text-4xl xl:text-5xl font-poppins">
+  The Blockchain Hub Core Team
+</h2>
+
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 mt-10 px-6 sm:px-10">
@@ -84,7 +85,7 @@ const Team = () => {
         </div>
 
         {/* Partner Logos */}
-        <div className="max-w-3xl mx-auto mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+        {/* <div className="max-w-3xl mx-auto mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
           {partnerLogos.map((logo, index) => (
             <img
               key={index}
@@ -93,7 +94,7 @@ const Team = () => {
               alt="partner logo"
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

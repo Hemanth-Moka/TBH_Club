@@ -68,10 +68,10 @@ export default function Navbar() {
             ) : (
               <>
                 <Link to="/" className={`navbar__nav-link ${location.pathname === '/' ? 'navbar__nav-link--active' : ''}`}>Home</Link>
-                <Link to="/Aboutus" className={`navbar__nav-link ${location.pathname === '/Aboutus' ? 'navbar__nav-link--active' : ''}`}>About</Link>
+                <Link to="/Aboutus" className={`navbar__nav-link ${location.pathname === '/Aboutus' ? 'navbar__nav-link--active' : ''}`}>Domains</Link>
                 <Link to="/Team" className={`navbar__nav-link ${location.pathname === '/Team' ? 'navbar__nav-link--active' : ''}`}>Team</Link>
                 <Link to="/events" className={`navbar__nav-link ${location.pathname === '/events' ? 'navbar__nav-link--active' : ''}`}>Events</Link>
-                <Link to="/contact" className={`navbar__nav-link ${location.pathname === '/contact' ? 'navbar__nav-link--active' : ''}`}>Contact</Link>
+                <Link to="/ContactUs" className={`navbar__nav-link ${location.pathname === '/contact' ? 'navbar__nav-link--active' : ''}`}>Contact</Link>
                 <Link to="/login" className={`navbar__nav-link ${location.pathname === '/login' ? 'navbar__nav-link--active' : ''}`}>Login</Link>
                 <Link to="/join_us" className="navbar__cta">Join Us</Link>
               </>
@@ -95,10 +95,10 @@ export default function Navbar() {
             ) : (
               <>
                 <Link to="/" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link to="/Aboutus" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>About</Link>
+                <Link to="/Aboutus" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Domains</Link>
                 <Link to="/Team" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Team</Link>
                 <Link to="/events" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Events</Link>
-                <Link to="/contact" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Contact</Link>
+                <Link to="/ContactUs" className="navbar__mobile-nav-link" onClick={() => setMenuOpen(false)}>Contact</Link>
                 <Link to="/join_us" className="navbar__mobile-cta" onClick={() => setMenuOpen(false)}>Join Us</Link>
                 <Link to="/login" className="navbar__mobile-cta" onClick={() => setMenuOpen(false)}>Login</Link>
               </>

@@ -18,9 +18,11 @@ export default function Hero() {
 
         {/* Main Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-8 text-center z-10 space-y-6">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_3px_15px_rgba(255,255,255,0.25)] leading-tight">
-            The Blockchain Hub
-          </h1>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_3px_15px_rgba(255,255,255,0.25)] leading-tight"
+     style={{ fontFamily: 'Druk Wide, sans-serif' }}>
+  The Blockchain Hub
+</h1>
+
 
           <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-300 italic drop-shadow-sm">
             “Empowering Decentralization”
