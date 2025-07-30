@@ -33,12 +33,15 @@ export default function Hero() {
             build, and collaborate.
           </p>
 
-          <a
-            href="#club"
-            className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white text-sm sm:text-base font-semibold tracking-wide shadow-lg hover:scale-105 transition-transform duration-300"
-          >
-            Explore the Club
-          </a>
+<a
+  href="http://t.me/klu_tbh"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white text-sm sm:text-base font-semibold tracking-wide shadow-lg hover:scale-105 transition-transform duration-300"
+>
+  Explore the Club
+</a>
+
         </div>
       </section>
 

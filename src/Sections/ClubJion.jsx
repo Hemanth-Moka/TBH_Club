@@ -21,7 +21,7 @@ const ClubJoin = () => {
 
           <div className="flex flex-col sm:flex-row justify-center items-center mt-10 gap-4">
             <a
-              href="#register"
+              href="https://t.me/klu_tbh"
               className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-violet-500 via-black-500 to-blue-500 rounded-md shadow-lg hover:scale-105 transition-transform"
             >
               <Club className="w-5 h-5" />
@@ -29,7 +29,7 @@ const ClubJoin = () => {
             </a>
 
             <a
-              href="#contact"
+              href="https://t.me/klu_tbh"
               className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white border border-white rounded-md hover:bg-white hover:text-black transition-all"
             >
               <MessageSquare className="w-5 h-5" />
