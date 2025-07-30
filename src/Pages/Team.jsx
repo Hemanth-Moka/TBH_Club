@@ -1,99 +1,90 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Team = () => {        
-    return (
-      <>
-        <section className="mt-20 py-12 bg-white sm:py-16 lg:py-20">
-    <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+const Team = () => {
+  const teamMembers = [
+    {
+      src: "/Team/somu2.jpg",
+      name: "Soma Sekhar",
+      role: "Chief - Club Activities"
+    },
+    {
+      src: "/Team/Mouli.jpg",
+      name: "Mouli K",
+      role: "Core Member"
+    },
+    {
+      src: "/Team/bhargavi_pic.jpg",
+      name: "Bhargavi ",
+      role: "Non Tech Lead"
+    },
+    {
+      src: "/Team/Hemanth_Moka1.jpg",
+      name: "Hemanth Moka",
+      role: "Full - Stack Developer"
+    }
+  ];
+
+  const partnerLogos = [
+    "logo-waverio.svg",
+    "logo-squarestone.svg",
+    "logo-creaty.svg",
+    "logo-creaty.svg",
+    "logo-creaty.svg"
+  ];
+
+  return (
+    <section className="mt-0 py-20 bg-gradient-to-br from-[#000000] via-[#1a1a1a] to-[#000000] text-white">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Our Investors & Board of Directors</h2>
+          <h2 className="mt-20 text-2xl font-bold text-violet-300 sm:text-4xl xl:text-5xl font-poppins">
+            Team Behind the Blockchain HUB 
+          </h2>
         </div>
 
-        <div className="grid max-w-6xl grid-cols-1 px-20 mx-auto mt-12 text-center sm:px-0 sm:grid-cols-2 md:mt-20 gap-x-8 md:grid-cols-4 gap-y-12 lg:gap-x-16 xl:gap-x-20">
-            <div>
-                <img className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-1.png" alt="" />
-                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">Jerome Bell</p>
-                <p className="mt-2 text-base font-normal text-gray-600 font-pj">Co founder, Chairman, Executive Director</p>
-            </div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 mt-10 px-6 sm:px-10">
 
-            <div>
-                <img className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-2.png" alt="" />
-                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">Jerome Bell</p>
-                <p className="mt-2 text-base font-normal text-gray-600 font-pj">Co founder, Chairman, Executive Director</p>
+          {teamMembers.map((member, idx) => (
+            <div key={idx} className="text-center">
+              <img
+                className="object-cover w-24 h-24 sm:w-32 sm:h-32 lg:w-44 lg:h-44 mx-auto rounded-full shadow-lg"
+                src={member.src}
+                alt={member.name}
+              />
+              <p className="mt-4 text-base sm:text-lg font-semibold font-poppins">{member.name}</p>
+              <p className="mt-1 text-sm text-gray-400 font-poppins">{member.role}</p>
             </div>
-            <div>
-                <img className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-2.png" alt="" />
-                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">Jerome Bell</p>
-                <p className="mt-2 text-base font-normal text-gray-600 font-pj">Co founder, Chairman, Executive Director</p>
-            </div>
-
-            <div>
-                <img className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-3.png" alt="" />
-                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">Jerome Bell</p>
-                <p className="mt-2 text-base font-normal text-gray-600 font-pj">Co founder, Chairman, Executive Director</p>
-            </div>
-
-            <div>
-                <img className="object-cover w-32 h-32 mx-auto rounded-full lg:w-44 lg:h-44 grayscale filter" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/team-member-4.png" alt="" />
-                <p className="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">Jerome Bell</p>
-                <p className="mt-2 text-base font-normal text-gray-600 font-pj">Co founder, Chairman, Executive Director</p>
-            </div>
+          ))}
         </div>
 
-        <div className="mt-12 sm:mt-16">
-            <svg className="w-auto h-4 mx-auto text-gray-300" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)" />
-                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
-            </svg>
+        {/* Dotted Divider */}
+        <div className="mt-14">
+          <svg className="w-auto h-4 mx-auto text-gray-600 opacity-50" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            {[...Array(24)].map((_, i) => (
+              <line
+                key={i}
+                y1="-0.5"
+                x2="18.0278"
+                y2="-0.5"
+                transform={`matrix(-0.5547 0.83205 0.83205 0.5547 ${i * 7 + 4} 1)`}
+              />
+            ))}
+          </svg>
         </div>
 
-        <div className="max-w-3xl mx-auto mt-12 space-y-8 sm:space-y-0 sm:flex sm:items-center sm:justify-center sm:mt-16 sm:gap-x-16">
-            <div>
-                <img className="w-auto mx-auto h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/logo-waverio.svg" alt="" />
-            </div>
-
-            <div>
-                <img className="w-auto mx-auto h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/logo-squarestone.svg" alt="" />
-            </div>
-
-            <div>
-                <img className="w-auto mx-auto h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/logo-creaty.svg" alt="" />
-            </div>
-             <div>
-                <img className="w-auto mx-auto h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/logo-creaty.svg" alt="" />
-            </div>
-             <div>
-                <img className="w-auto mx-auto h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/team/1/logo-creaty.svg" alt="" />
-            </div>
-            
-            
+        {/* Partner Logos */}
+        <div className="max-w-3xl mx-auto mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+          {partnerLogos.map((logo, index) => (
+            <img
+              key={index}
+              className="h-10 sm:h-14 opacity-70 hover:opacity-100 transition"
+              src="/TBH_logo.png"
+              alt="partner logo"
+            />
+          ))}
         </div>
-    </div>
-</section>
-</>
+      </div>
+    </section>
+  );
+};
 
-    )
-}
 export default Team;

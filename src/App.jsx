@@ -9,6 +9,7 @@ import JoinUs from './Pages/Join_us';
 import Login from './Pages/Login';
 import SplashCursor from './components/SplashCursor';
 import Users from './admin/Users';
+// import Team from './Pages/Team'
 import Notfound from './Pages/Notfound';
 
 // PrivateRoute wrapper
@@ -27,7 +28,8 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/join_us" element={<JoinUs />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="*" element={<Notfound />} />
 
         {/* Protected Route */}
