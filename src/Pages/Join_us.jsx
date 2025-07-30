@@ -19,6 +19,8 @@ export default function JoinUs() {
 
   const [profilePhoto, setProfilePhoto] = useState(null);
   const [coverPhoto, setCoverPhoto] = useState(null);
+  const [profilePhotoName, setProfilePhotoName] = useState('');
+  const [coverPhotoName, setCoverPhotoName] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,13 +38,12 @@ export default function JoinUs() {
     if (coverPhoto) data.append('coverPhoto', coverPhoto);
 
     try {
-      const res = await axios.post('https://backend-tbh.onrender.com/join', data);
-      alert('Registration successful!');
-      console.log(res.data);
-      navigate('/'); // ✅ Redirect to homepage after success
+      await axios.post('https://backend-tbh.onrender.com/join', data);
+      alert('🎉 Registration successful!');
+      navigate('/');
     } catch (err) {
       console.error(err);
-      alert('Failed to submit form.');
+      alert('❌ Failed to submit form.');
     }
   };
 
@@ -51,9 +52,7 @@ export default function JoinUs() {
       <div className="max-w-5xl mx-auto space-y-16">
         {/* Header */}
         <div className="text-center">
-          <h1 className="mt-20 text-4xl font-bold text-violet-500">
-            Join The Blockchain Hub
-          </h1>
+          <h1 className="mt-20 text-4xl font-bold text-violet-500">Join The Blockchain Hub</h1>
           <p className="mt-3 text-base text-gray-400">
             Become a part of KL University’s Blockchain community.
           </p>
@@ -75,10 +74,16 @@ export default function JoinUs() {
                 type="file"
                 className="hidden"
                 accept="image/*"
-                onChange={(e) => setProfilePhoto(e.target.files[0])}
+                onChange={(e) => {
+                  setProfilePhoto(e.target.files[0]);
+                  setProfilePhotoName(e.target.files[0]?.name || '');
+                }}
               />
             </label>
           </div>
+          {profilePhotoName && (
+            <p className="text-sm text-green-400 mt-1">📁 Uploaded: {profilePhotoName}</p>
+          )}
 
           <div>
             <label className="block text-sm font-medium">Cover Photo</label>
@@ -91,10 +96,16 @@ export default function JoinUs() {
                   type="file"
                   className="hidden"
                   accept="image/*"
-                  onChange={(e) => setCoverPhoto(e.target.files[0])}
+                  onChange={(e) => {
+                    setCoverPhoto(e.target.files[0]);
+                    setCoverPhotoName(e.target.files[0]?.name || '');
+                  }}
                 />
               </label>
               <p className="mt-1 text-sm text-gray-500">PNG, JPG, up to 10MB</p>
+              {coverPhotoName && (
+                <p className="text-sm text-green-400 mt-2">📁 Uploaded: {coverPhotoName}</p>
+              )}
             </div>
           </div>
         </section>
@@ -114,11 +125,8 @@ export default function JoinUs() {
         {/* Blockchain Journey */}
         <section className="space-y-6">
           <h2 className="text-2xl font-semibold text-violet-400">Your Blockchain Journey</h2>
-
           <div>
-            <label htmlFor="interestArea" className="text-sm font-medium">
-              Interest Area
-            </label>
+            <label htmlFor="interestArea" className="text-sm font-medium">Interest Area</label>
             <select
               id="interestArea"
               name="interestArea"
