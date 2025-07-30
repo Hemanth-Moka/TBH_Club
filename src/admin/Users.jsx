@@ -81,48 +81,61 @@ const Users = () => {
           <div className="overflow-x-auto border border-white ">
             <table className="min-w-full text-sm table-auto border-collapse">
               <thead>
-                <tr className="bg-white text-black font-semibold ">
-                  <th className="px-4 py-3 text-left border-r border-gray-300">Username</th>
-                  <th className="px-4 py-3 text-left border-r border-gray-300">Email</th>
-                  <th className="px-4 py-3 text-left border-r border-gray-300">Profile</th>
-                  <th className="px-4 py-3 text-left border-r border-gray-300">Cover</th>
-                  <th className="px-4 py-3 text-left">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {members.map((member) => (
-                  <tr key={member.id} className="border-t border-white hover:bg-white/10 transition">
-                    <td className="px-4 py-3 border-r border-white">{member.username}</td>
-                    <td className="px-4 py-3 border-r border-white">{member.email}</td>
-                    <td className="px-4 py-3 border-r border-white">
-                      {member.profile_photo && (
-                        <img
-                          src={`https://backend-tbh.onrender.com/uploads/${member.profile_photo}`}
-                          alt="profile"
-                          className="w-10 h-10 rounded-full object-cover border border-white"
-                        />
-                      )}
-                    </td>
-                    <td className="px-4 py-3 border-r border-white">
-                      {member.cover_photo && (
-                        <img
-                          src={`https://backend-tbh.onrender.com/uploads/${member.cover_photo}`}
-                          alt="cover"
-                          className="w-16 h-10 object-cover border border-white"
-                        />
-                      )}
-                    </td>
-                    <td className="px-4 py-3">
-                      <button
-                        onClick={() => deleteMember(member.id)}
-                        className="flex items-center gap-1 px-3 py-1 border border-white text-white hover:bg-white hover:text-black transition rounded"
-                      >
-                        <FaTrash className="text-sm" /> Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+  <tr className="bg-white text-black font-semibold">
+    <th className="px-4 py-3 border">Username</th>
+    <th className="px-4 py-3 border">First Name</th>
+    <th className="px-4 py-3 border">Last Name</th>
+    <th className="px-4 py-3 border">Email</th>
+    <th className="px-4 py-3 border">About</th>
+    <th className="px-4 py-3 border">Interest Area</th>
+    <th className="px-4 py-3 border">Motivation</th>
+    <th className="px-4 py-3 border">Experience</th>
+    <th className="px-4 py-3 border">Profile</th>
+    <th className="px-4 py-3 border">Cover</th>
+    <th className="px-4 py-3 border">Actions</th>
+  </tr>
+</thead>
+<tbody>
+  {members.map((member) => (
+    <tr key={member.id} className="border-t border-white hover:bg-white/10 transition">
+      <td className="px-4 py-2 border">{member.username}</td>
+      <td className="px-4 py-2 border">{member.first_name}</td>
+      <td className="px-4 py-2 border">{member.last_name}</td>
+      <td className="px-4 py-2 border">{member.email}</td>
+      <td className="px-4 py-2 border">{member.about}</td>
+      <td className="px-4 py-2 border">{member.interest_area}</td>
+      <td className="px-4 py-2 border">{member.motivation}</td>
+      <td className="px-4 py-2 border">{member.experience}</td>
+      <td className="px-4 py-2 border">
+        {member.profile_photo && (
+          <img
+            src={`https://backend-tbh.onrender.com/uploads/${member.profile_photo}`}
+            alt="profile"
+            className="w-10 h-10 rounded-full object-cover border border-white"
+          />
+        )}
+      </td>
+      <td className="px-4 py-2 border">
+        {member.cover_photo && (
+          <img
+            src={`https://backend-tbh.onrender.com/uploads/${member.cover_photo}`}
+            alt="cover"
+            className="w-16 h-10 object-cover border border-white"
+          />
+        )}
+      </td>
+      <td className="px-4 py-2 border">
+        <button
+          onClick={() => deleteMember(member.id)}
+          className="flex items-center gap-1 px-3 py-1 border border-white text-white hover:bg-white hover:text-black transition rounded"
+        >
+          <FaTrash className="text-sm" /> Delete
+        </button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
             </table>
           </div>
         )}
