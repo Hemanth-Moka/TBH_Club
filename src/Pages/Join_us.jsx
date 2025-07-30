@@ -66,7 +66,7 @@ export default function JoinUs() {
             <InputField id="about" label="About You" placeholder="A brief intro..." onChange={handleChange} value={form.about} />
           </div>
 
-          <div className="flex items-center gap-4 mt-4">
+          {/* <div className="flex items-center gap-4 mt-4">
             <UserCircleIcon className="w-12 h-12 text-gray-600" />
             <label className="px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 transition text-white shadow-sm cursor-pointer">
               Upload Profile Photo
@@ -80,7 +80,7 @@ export default function JoinUs() {
                 }}
               />
             </label>
-          </div>
+          </div> */}
           {profilePhotoName && (
             <p className="text-sm text-green-400 mt-1">📁 Uploaded: {profilePhotoName}</p>
           )}
@@ -136,10 +136,12 @@ export default function JoinUs() {
             >
               <option value="">Choose an area</option>
               <option>Blockchain Development</option>
-              <option>Smart Contracts</option>
-              <option>DeFi</option>
+              <option>NFT & WEB 3</option>
+              <option>Drafting</option>
+              <option>Designing / Video Editing</option>
               <option>Research & Innovation</option>
-              <option>NFTs / Web3</option>
+              <option>PR And Marketing</option>
+              {/* <option></option> */}
             </select>
           </div>
 

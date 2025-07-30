@@ -7,20 +7,32 @@ const Team = () => {
       name: "Soma Sekhar",
       role: "President"
     },
-    {
-      src: "/Team/Mouli.jpg",
-      name: "Mouli K",
-      role: "AI Lead"
-    },
-    {
+        {
       src: "/Team/bhargavi_pic.jpg",
       name: "Bhargavi ",
       role: "Vice President"
     },
     {
+      src: "/Team/Mouli.jpg",
+      name: "Mouli K",
+      role: "AI Lead"
+    },
+
+
+    {
       src: "/Team/Hemanth_Moka1.jpg",
       name: "Hemanth Moka",
       role: "Full - Stack Developer"
+    },
+        {
+      src: "/Team/Sarvagna.jpg",
+      name: "Sarvagna",
+      role: "Decision Maker"
+    },
+        {
+      src: "/Team/Praveen.jpg",
+      name: "Praveen",
+      role: "Founder / Advisor"
     }
   ];
 
