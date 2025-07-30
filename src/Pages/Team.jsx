@@ -5,17 +5,17 @@ const Team = () => {
     {
       src: "/Team/somu2.jpg",
       name: "Soma Sekhar",
-      role: "Chief - Club Activities"
+      role: "President"
     },
     {
       src: "/Team/Mouli.jpg",
       name: "Mouli K",
-      role: "Core Member"
+      role: "AI Lead"
     },
     {
       src: "/Team/bhargavi_pic.jpg",
       name: "Bhargavi ",
-      role: "Non Tech Lead"
+      role: "Vice President"
     },
     {
       src: "/Team/Hemanth_Moka1.jpg",
