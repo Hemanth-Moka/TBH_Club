@@ -23,6 +23,7 @@ export default function JoinUs() {
   const [coverPhotoName, setCoverPhotoName] = useState('');
 
   const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,6 +31,7 @@ export default function JoinUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const data = new FormData();
     Object.entries(form).forEach(([key, value]) => {
@@ -41,28 +43,20 @@ export default function JoinUs() {
 
     try {
       await axios.post('https://backend-tbh.onrender.com/join', data);
-      setStatus({ type: 'success', message: '🎉 Registration successful!' });
-      setTimeout(() => navigate('/'), 1500); // Navigate after short delay
+      setStatus({ type: 'success', message: ' Registration successful Our Team Wil Contact You !' });
+      setTimeout(() => {
+        setIsSubmitting(false);
+        navigate('/ContactUs');
+      }, 3000);
     } catch {
       setStatus({ type: 'error', message: '❌ Failed to submit form. Please try again.' });
+      setIsSubmitting(false);
     }
   };
 
   return (
     <form className="bg-black text-white min-h-screen px-4 py-16" onSubmit={handleSubmit}>
       <div className="max-w-5xl mx-auto space-y-16">
-        {/* Status Message */}
-        {status.message && (
-          <div
-            className={`text-center px-6 py-3 rounded-lg font-semibold ${
-              status.type === 'success'
-                ? 'bg-green-700 text-green-100'
-                : 'bg-red-700 text-red-100'
-            }`}
-          >
-            {status.message}
-          </div>
-        )}
 
         {/* Header */}
         <div className="text-center">
@@ -122,30 +116,29 @@ export default function JoinUs() {
         </section>
 
         {/* Blockchain Journey */}
-     <section className="space-y-6">
-  <h2 className="text-2xl font-semibold text-violet-400">Your Blockchain Journey</h2>
-  
-  <div>
-    <div className="flex items-center justify-between">
-      <label htmlFor="interestArea" className="text-sm font-medium text-white">
-        Interest Area
-      </label>
-      <a
-        href="/AboutUs"
-        className="text-xs text-violet-400 hover:underline"
-      >
-        Know more about domains
-      </a>
-    </div>
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-violet-400">Your Blockchain Journey</h2>
+          <div>
+            <div className="flex items-center justify-between">
+              <label htmlFor="interestArea" className="text-sm font-medium text-white">
+                Interest Area
+              </label>
+              <a
+                href="/AboutUs"
+                className="text-xs text-violet-400 hover:underline"
+              >
+                Know more about domains
+              </a>
+            </div>
 
-    <select
-      id="interestArea"
-      name="interestArea"
-      required
-      value={form.interestArea}
-      onChange={handleChange}
-      className="mt-1 w-full rounded-xl bg-black/30 border border-violet-500/20 p-3 text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
-    >
+            <select
+              id="interestArea"
+              name="interestArea"
+              required
+              value={form.interestArea}
+              onChange={handleChange}
+              className="mt-1 w-full rounded-xl bg-black/30 border border-violet-500/20 p-3 text-white backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+            >
               <option value="">Choose an area</option>
               <option>Blockchain Development</option>
               <option>NFT & WEB 3</option>
@@ -166,17 +159,36 @@ export default function JoinUs() {
         <div className="flex justify-center mt-10 gap-6">
           <button
             type="reset"
+            disabled={isSubmitting}
             className="px-6 py-2 text-sm rounded-xl border border-gray-600 text-gray-300 hover:bg-gray-800 transition duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-6 py-2 text-sm rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1 shadow-md hover:shadow-violet-500/40"
+            disabled={isSubmitting}
+            className="px-6 py-2 text-sm rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1 shadow-md hover:shadow-violet-500/40 flex items-center gap-2"
           >
-            Register
+            {isSubmitting ? (
+              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+            ) : (
+              'Register'
+            )}
           </button>
         </div>
+
+        {/* Status Message at the Bottom */}
+        {status.message && (
+          <div
+            className={`text-center mt-6 px-6 py-3 rounded-lg font-semibold transition-all duration-500 ${
+              status.type === 'success'
+                ? 'bg-green-700 text-green-100'
+                : 'bg-red-700 text-red-100'
+            }`}
+          >
+            {status.message}
+          </div>
+        )}
       </div>
     </form>
   );
