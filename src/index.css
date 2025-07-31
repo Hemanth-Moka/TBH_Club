@@ -2,8 +2,8 @@
 /* In your global CSS or Tailwind config */
 @font-face {
   font-family: 'Druk Wide';
-  src: url('/fonts/DrukWide-Bold.woff2') format('woff2'),
+  src: url('/fonts/DrukWideBold.woff') format('woff2'),
        url('/fonts/DrukWide-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
