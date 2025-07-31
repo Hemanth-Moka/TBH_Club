@@ -17,7 +17,7 @@ const services = [
   {
     name: "Hackathons & Research",
     role: "Innovation & Ecosystem Engagement",
-    image: "https://img.icons8.com/color/96/research.png",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ0Rz8dMdYe5qE7RgB14DFnscOtbBbjhdCfw&s",
     feedback: "Participate in hackathons, explore trends like ZKPs, Layer 2 scaling, and contribute to next-gen Web3 infrastructure.",
   }
 ];

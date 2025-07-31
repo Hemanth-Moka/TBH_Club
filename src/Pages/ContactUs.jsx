@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Send, MapPin } from 'lucide-react';
+import { Mail, Send, MapPin, Instagram, Linkedin } from 'lucide-react';
 
 export default function ContactUs() {
   return (
@@ -20,10 +20,10 @@ export default function ContactUs() {
           <div className="flex items-center justify-center gap-3">
             <Mail className="w-5 h-5 text-violet-400" />
             <a
-              href="mailto:klu.blockchainhub@gmail.com"
+              href="mailto:theblockchainhub.klu@gmail.com"
               className="text-violet-400 hover:underline"
             >
-              klu.blockchainhub@gmail.com
+              theblockchainhub.klu@gmail.com
             </a>
           </div>
 
@@ -45,6 +45,26 @@ export default function ContactUs() {
               K L University, Vaddeswaram, Andhra Pradesh
             </span>
           </div>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="flex justify-center gap-6 pt-4">
+          <a
+            href="https://www.instagram.com/klu_tbh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-pink-500 transition"
+          >
+            <Instagram className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/the-blockchain-hub/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-500 transition"
+          >
+            <Linkedin className="w-6 h-6" />
+          </a>
         </div>
       </div>
     </section>

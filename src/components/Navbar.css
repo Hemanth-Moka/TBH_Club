@@ -15,7 +15,7 @@
   border-radius: 35px;
   padding: 0.2px 10px;
   background: rgba(114, 27, 255, 0);
-  backdrop-filter: blur(80px) saturate(160%);
+  backdrop-filter: blur(30px) saturate(160%);
   -webkit-backdrop-filter: blur(2130px) saturate(160%);
   /* border: 1px solid rgba(165, 82, 88, 0.2); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -64,6 +64,7 @@
   border: none;
   outline: none;
   box-shadow: none;
+  margin-top: 10px;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -71,7 +72,7 @@
 .navbar__logo-image {
   height: 3.75rem;
   object-fit: contain;
-  margin-top: 5px;
+  margin-top: -7px;
 }
 
 .navbar__logo-text {
@@ -93,7 +94,7 @@
 }
 
 .navbar__logo-shakti {
-  color: #6000c7d4;
+  color: #ba7affd4;
   font-weight: 800;
   font-size: 1.6rem;
   font-family: 'Sora', sans-serif;
@@ -156,7 +157,7 @@
 }
 
 .navbar__cta {
-  background: linear-gradient(135deg, #b222ff, #ffffff);
+  background: linear-gradient(135deg, #b222ff, #000000);
   color: white;
   padding: 0.5rem 1.25rem;
   border-radius: 50px;
@@ -245,7 +246,7 @@
 }
 
 .navbar__mobile-cta {
-  background: linear-gradient(135deg, #b222ff, #ffffff);
+  background: linear-gradient(135deg, #b222ff, #000000);
   color: white;
   padding: 0.75rem;
   border-radius: 9999px;

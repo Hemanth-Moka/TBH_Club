@@ -23,7 +23,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="LinkedIn"
+                <a href="https://www.linkedin.com/company/the-blockchain-hub/posts/?feedView=al" aria-label="LinkedIn"
                   className="text-gray-300 hover:text-blue-500 transition">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4.98 3.5A2.5 2.5 0 0 1 7.48 6a2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1 2.5-2.5zM2 8.75h4v12.5H2V8.75zm7 0h3.75v1.64h.05a4.11 4.11 0 0 1 3.7-2.04c3.95 0 4.68 2.6 4.68 5.98v6.92H17v-6.14c0-1.47-.03-3.36-2.05-3.36-2.05 0-2.36 1.6-2.36 3.25v6.25H9V8.75z" />
@@ -39,7 +39,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:example@tbhclub.com" aria-label="Email"
+                <a href="mailto:theblockchainhub.klu@gmail.com" aria-label="Email"
                   className="text-gray-300 hover:text-red-400 transition">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v1.18l-10 6.32-10-6.32V6c0-1.1.9-2 2-2zm0 4.47l7.6 4.8a1 1 0 0 0 1.07 0L20 8.47V18c0 1.1-.9 2-2 2H6a2 2 0 0 1-2-2V8.47z" />

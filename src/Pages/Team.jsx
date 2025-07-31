@@ -13,27 +13,39 @@ const Team = () => {
       role: "Vice President"
     },
     {
+      src: "/Team/sirisha.jpg",
+      name: "Sirisha",
+      role: "TECHNICAL LEAD"
+    },
+    {
       src: "/Team/Mouli.jpg",
       name: "Mouli K",
       role: "AI Lead"
     },
 
-
-    {
+    
+    
+     {
       src: "/Team/Hemanth_Moka1.jpg",
       name: "Hemanth Moka",
       role: "</>Web Developer"
-    },
-        {
-      src: "/Team/Sarvagna.jpg",
-      name: "Sarvagna",
-      role: "Decision Maker"
+    }, 
+    {
+      src: "/Team/Nithya2.jpg",
+      name: "Nithya",
+      role: "Core Member"
+    }, 
+    {
+      src: "/Team/swathi2.jpg",
+      name: "Swathi",
+      role: "Core Member"
     },
         {
       src: "/Team/Praveen.jpg",
       name: "Praveen",
-      role: "Founder / Advisor"
+      role: "Founder"
     }
+
   ];
 
   const partnerLogos = [
