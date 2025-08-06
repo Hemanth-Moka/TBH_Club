@@ -23,7 +23,7 @@ const Team = () => {
       role: "AI Lead"
     },
     {
-      src: "/Team/Hemanth_Moka.jpg",
+      src: "/Team/Hemanth_Moka1.jpg",
       name: "Hemanth Moka",
       role: "</> Web Developer"
     }, 

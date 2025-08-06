@@ -1,6 +1,9 @@
 import React from 'react';
+import { useBatteryStatus } from 'react-haiku';
 
 export default function Footer() {
+  const { level, isCharging } = useBatteryStatus();
+
   return (
     <section className="py-12 bg-black text-gray-200 sm:pt-16 lg:pt-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -10,6 +13,11 @@ export default function Footer() {
             <img className="w-auto h-14" src="/TBH_logo.png" alt="Blockchain Hub" />
             <p className="text-base leading-relaxed text-gray-400 mt-7">
               Blockchain Hub is a decentralized tech ecosystem focused on delivering secure, scalable, and innovative Web3 solutions.
+            </p>
+
+            {/* Battery Status */}
+            <p className="text-sm mt-4 text-gray-500">
+              Battery: {Math.round(level * 1)}% {isCharging ? "(Charging)" : "(Not Charging)"}
             </p>
 
             {/* Social Icons */}
